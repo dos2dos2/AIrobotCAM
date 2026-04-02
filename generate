@@ -1,0 +1,17 @@
+def generate_ai_toolpath(mesh, ctx):
+    features = extract_features(mesh)
+    ctx.features = features
+
+    strategy = select_strategy(ctx)
+
+    base_params = generate_parameters(ctx, strategy)
+
+    optimized_params = optimize(ctx, strategy)
+
+    toolpath = generate_raster_toolpath(
+        bounds=(0,0,100,100),
+        step_over=optimized_params["step_over"],
+        z_height=0
+    )
+
+    return toolpath
