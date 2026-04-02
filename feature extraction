@@ -1,0 +1,16 @@
+def extract_features(mesh) -> PartFeatures:
+    # Placeholder — later use trimesh / OpenCascade
+    bounding_box = mesh.bounding_box.extents
+    surface_area = mesh.area
+
+    curvature = estimate_curvature(mesh)
+    pockets = detect_pockets(mesh)
+    holes = detect_holes(mesh)
+
+    return PartFeatures(
+        bounding_box=bounding_box,
+        surface_area=surface_area,
+        curvature=curvature,
+        pockets=pockets,
+        holes=holes
+    )
