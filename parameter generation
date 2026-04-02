@@ -1,0 +1,26 @@
+def generate_parameters(ctx: MachiningContext, strategy: str):
+    tool_diam = ctx.tool.diameter
+
+    if strategy == "adaptive_clearing":
+        step_over = tool_diam * 0.4
+        step_down = tool_diam * 0.5
+
+    elif strategy == "parallel":
+        step_over = tool_diam * 0.2
+        step_down = tool_diam * 0.3
+
+    elif strategy == "3D_contour":
+        step_over = tool_diam * 0.1
+        step_down = tool_diam * 0.2
+
+    else:
+        step_over = tool_diam * 0.5
+        step_down = tool_diam * 0.5
+
+    feed_rate = compute_feed_rate(ctx)
+
+    return {
+        "step_over": step_over,
+        "step_down": step_down,
+        "feed_rate": feed_rate
+    }
