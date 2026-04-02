@@ -1,0 +1,3 @@
+State = machining state
+Action = toolpath parameters
+Reward = speed + quality - collisions
