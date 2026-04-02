@@ -1,0 +1,26 @@
+import random
+
+def optimize(ctx, strategy):
+    best_score = float("inf")
+    best_params = None
+
+    for _ in range(50):
+        params = {
+            "step_over": random.uniform(0.1, 0.6) * ctx.tool.diameter,
+            "step_down": random.uniform(0.1, 0.6) * ctx.tool.diameter,
+            "feed_rate": random.uniform(500, 3000)
+        }
+
+        toolpath = generate_raster_toolpath(
+            bounds=(0,0,100,100),
+            step_over=params["step_over"],
+            z_height=0
+        )
+
+        score = evaluate_toolpath(toolpath, ctx)
+
+        if score < best_score:
+            best_score = score
+            best_params = params
+
+    return best_params
