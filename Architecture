@@ -1,0 +1,24 @@
+INPUT →
+    Geometry Features
+    Stock Features
+    Tool Features
+    Material
+    Constraints
+
+↓
+Feature Extractor
+
+↓
+Strategy Selector (AI / Rules)
+
+↓
+Parameter Generator (AI)
+
+↓
+Toolpath Generator (Deterministic)
+
+↓
+Simulation + Evaluation
+
+↓
+Optimizer Loop (AI)
