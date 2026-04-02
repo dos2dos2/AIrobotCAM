@@ -1,0 +1,28 @@
+ai_cam_robot/
+│
+├── geometry/
+│   ├── mesh_loader.py
+│   ├── feature_extractor.py
+│
+├── toolpath/
+│   ├── raster.py
+│   ├── contour.py
+│   ├── adaptive.py
+│
+├── ai/
+│   ├── strategy_selector.py
+│   ├── parameter_generator.py
+│   ├── optimizer.py
+│
+├── simulation/
+│   ├── collision.py
+│   ├── simulator.py
+│
+├── robot/
+│   ├── kinematics.py
+│   ├── post_processor.py
+│
+├── gui/
+│
+├── main.py
+└── config.py
