@@ -1,0 +1,12 @@
+def evaluate_toolpath(toolpath, ctx):
+    machining_time = estimate_time(toolpath, ctx)
+    collisions = check_collisions(toolpath)
+    surface_quality = estimate_surface_finish(toolpath, ctx)
+
+    score = (
+        machining_time * 0.5 +
+        collisions * 1000 +
+        (1 - surface_quality) * 200
+    )
+
+    return score
